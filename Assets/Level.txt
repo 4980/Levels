@@ -1,0 +1,2 @@
+﻿Level > Start,Middle,End
+Middle > TurnRight,Middle|TurnLeft,Middle|Straight | Straight, Middle

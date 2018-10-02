@@ -1,0 +1,2 @@
+﻿Hamburger > Bun,Inside,Bun
+Inside > Burger,Cheese,Tomato | Burger,Tomato | Burger,Cheese | Burger
