@@ -22,6 +22,9 @@ public class GameState : MonoBehaviour
 
     public static int GAME_STATE = WAIT_GAME_START;
 
+
+    Camera staticCamera;
+
     internal static void DieTransition()
     {
         GAME_STATE = DEAD;
@@ -39,7 +42,7 @@ public class GameState : MonoBehaviour
 
     void Reboot()
     {
-        Instantiate<Camera>(CameraPrefab);
+        staticCamera = Instantiate<Camera>(CameraPrefab);
         EveryonesParent = new GameObject("EveryonesParent");
         Reader.Read();
     }
@@ -101,6 +104,7 @@ public class GameState : MonoBehaviour
     private void StartGameTransition()
     {
         GAME_STATE = GAME_ON;
+        Destroy(staticCamera, .1f);
         Shooter = Instantiate<Shooter>(ShooterPrefab);
         Shooter.Boot();
         Instantiate(SpawnParticleSystem);
